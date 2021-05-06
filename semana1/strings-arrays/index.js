@@ -61,3 +61,16 @@ const removeTask = iTask - 1
 taskList.splice(removeTask, 1)
 // f.
 console.log('f.', taskList)
+
+
+// DESAFIOS
+
+// 1)
+const frase = 'eu amo javascript'
+const arrayFrase = frase.split(' ')
+console.log(arrayFrase)
+
+// 2)
+const fruit = ['Banana', 'Morango', 'Abacaxi', 'Laranja', 'Ameixa']
+console.log('2)', fruit)
+console.log('indice do abacaxi: ' + fruit.indexOf('Abacaxi'), '| length: ' + fruit[3].length)
