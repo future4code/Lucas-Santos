@@ -97,7 +97,7 @@ console.log(`Divisão:`, divisao())
 // 1)
 // a.
 const parametro = (coisa) => {
-  return console.log(coisa)
+  return console.log('Desafio 1)' , coisa)
 }
 
 const sum = (num1, num2) => {
@@ -107,3 +107,13 @@ const sum = (num1, num2) => {
 
 sum(4, 4)
 
+// 2)
+const pitagoras = (cat1, cat2) => {
+  const result1 = cat1**2
+  const result2 = cat2**2
+  const teorema = result1 + result2
+
+  return console.log('2) c2:', teorema)
+}
+
+pitagoras(3, 4)
