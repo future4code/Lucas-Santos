@@ -73,22 +73,22 @@ frase('Eu gosto de chocolate')
 // 3)
 const number1 = Number(prompt('Insira um número'))
 const number2 = Number(prompt('Insira outro número'))
-console.log(`3) Números inseridos ${number1} e ${number2}`)
 const somar = () => {
   return number1 + number2
 }
-console.log(`Soma:`, somar())
 const subtrair = () => {
   return number1 - number2
 }
-console.log(`Diferença:`, subtrair())
 const multi = () => {
   return number1 * number2
 }
-console.log(`Multiplicação:`, multi())
 const divisao = () => {
   return number1 / number2
 }
+console.log(`3) Números inseridos ${number1} e ${number2}`)
+console.log(`Soma:`, somar())
+console.log(`Diferença:`, subtrair())
+console.log(`Multiplicação:`, multi())
 console.log(`Divisão:`, divisao())
 
 
@@ -111,9 +111,10 @@ sum(4, 4)
 const pitagoras = (cat1, cat2) => {
   const result1 = cat1**2
   const result2 = cat2**2
-  const teorema = result1 + result2
+  const result = result1 + result2
+  const teorema = result ** (1/2) // raiz quadrada
 
-  return console.log('2) c2:', teorema)
+  return console.log('2) C:', teorema)
 }
 
 pitagoras(3, 4)
