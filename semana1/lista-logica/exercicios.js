@@ -124,29 +124,47 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // Exercício 13
 
 function checaRenovacaoRG() {
-  const anoAtual = 2021
-  const aniver = 1992
-  const doc = 2000
+  const anoAtual = Number(prompt(''))
+  const aniver = Number(prompt(''))
+  const doc = Number(prompt(''))
 
   const idade = anoAtual - aniver
+  const verificarDoc = anoAtual - doc
 
-  const jovem = idade <= 20 // = 5 em 5
-  const adulto = idade > 20 && idade <= 50 // = 10 em 10
-  const idoso = idade > 50 // = 15 em 15
+  const jovem = idade <= 20 && verificarDoc < 5 // false
+  const adulto = idade > 20 && idade <= 50 && verificarDoc < 10 // false
+  const idoso = idade > 50 && verificarDoc < 15 // false
 
-  
+  const verificarRenovacao = jovem || adulto || idoso
 
-
+  console.log(!verificarRenovacao)
 }
 
 // Exercício 14
 
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
+  const cond1 = ano % 400 === 0
+  const cond2 = ano % 4 === 0 && ano % 100 !== 0
+
+  const bissexto = cond1 || cond2
+
+  return bissexto
 }
 
 // Exercício 15
 
 function checaValidadeInscricaoLabenu() {
-  // implemente sua lógica aqui
+  const maiorIdade = prompt('')
+  const ensinoMedio = prompt('')
+  const horarioDisponivel = prompt('')
+
+  const sim = 'sim'
+
+  const maiorIdadeVerify = maiorIdade.toLowerCase() === sim
+  const ensinoMedioVerify = ensinoMedio.toLowerCase() === sim
+  const horarioDisponivelVerify = horarioDisponivel.toLowerCase() === sim
+
+  const verificarMatricula = maiorIdadeVerify && ensinoMedioVerify && horarioDisponivelVerify
+
+  console.log(verificarMatricula)
 }
