@@ -61,15 +61,11 @@ function imprimeInformacoesUsuario() {
 //Exercício 5
 
 function imprimeTresCoresFavoritas() {
-  const favoriteColor = []
-  
   const favoriteColor1 = prompt('')
   const favoriteColor2 = prompt('')
   const favoriteColor3 = prompt('')
 
-  favoriteColor.push(favoriteColor1, favoriteColor2, favoriteColor3)
-
-  console.log(favoriteColor)
+  console.log([favoriteColor1, favoriteColor2, favoriteColor3])
 }
 
 //Exercício 6
