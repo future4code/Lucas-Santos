@@ -164,3 +164,4 @@ const inverterDiposnibilidadeFruta = (fruta) => {
 }
 
 inverterDiposnibilidadeFruta(frutas1)
+push()
