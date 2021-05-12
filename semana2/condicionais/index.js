@@ -22,6 +22,7 @@
 
 // 1)
 // a. | b. | c.
+/*
 const age = Number(prompt('Digite a sua idade:'))
 
 const yesYouCan = (driver) => {
@@ -58,16 +59,15 @@ const course2 = (time) => {
   switch (time.toUpperCase()) {
     case 'M':
       console.log('Bom Dia!')
-      break;
+      break
     case 'V':
       console.log('Boa Tarde!')
-      break;
+      break
     case 'N':
       console.log('Boa Noite!')
-      break;
+      break
     default:
       console.log('Período não encontrado.')
-      break;
   }
 }
 
@@ -106,20 +106,21 @@ const verifyTicket = (movie, money) => {
 }
 
 verifyTicket(genderMovie, ticket)
-
+*/
 
 // 2)
 const client = {
   name: prompt('Digite seu nome completo:'),
-  typeGame: prompt('Região do jogo: IT = internacional | NC = Nacional'),
-  timeGame: prompt('Etapa do jogo: SF = semi-final | DT = decisão do 3º lugar | FN = final'),
-  category: Number(prompt('Categoria: 1 | 2 | 3  4')),
+  typeGame: prompt('Região do jogo: IT = internacional | NC = Nacional').toUpperCase(),
+  timeGame: prompt('Etapa do jogo: SF = semi-final | DT = decisão do 3º lugar | FN = final').toUpperCase(),
+  category: Number(prompt('Categoria: 1 | 2 | 3 | 4')),
   ticket: Number(prompt('Quantidade de ingressos:'))
 }
 
-const gameNC = (client) => {
-  if (client.timeGame.toUpperCase() === 'SF') {
-    let price
+const prices = (client) => {
+  const dolar = 4.10
+  let price
+  if (client.timeGame === 'SF') {    
     switch (client.category) {
       case 4:
         price = 220
@@ -135,15 +136,14 @@ const gameNC = (client) => {
         break
     }
     
-    console.log('Etapa do jogo:  Semifinais')
-    console.log(`Categoria:  ${client.category}`)
-    console.log(`Quantidade de Ingressos:  ${client.ticket} ingressos`)
-    console.log('---Valores---')
-    console.log(`Valor do ingresso: R$ ${price},00`)
-    console.log(`Valor total: R$ ${price * client.ticket},00`)
+    if (client.typeGame === 'NC') {
+      console.log(`Valor do ingresso: R$ ${price},00\nValor total: R$ ${price * client.ticket},00`)
 
-  } else if (client.timeGame.toUpperCase() === 'DT') {
-    let price
+    } else if (client.typeGame === 'IT') {
+      console.log(`Valor do ingresso: U$ ${price},00\nValor total: U$ ${price * client.ticket * dolar},00`)
+    }    
+
+  } else if (client.timeGame === 'DT') {
     switch (client.category) {
       case 4:
         price = 170
@@ -158,16 +158,15 @@ const gameNC = (client) => {
         price = 660
         break
     }
-    
-    console.log('Etapa do jogo:  Decisão do 3º lugar')
-    console.log(`Categoria:  ${client.category}`)
-    console.log(`Quantidade de Ingressos:  ${client.ticket} ingressos`)
-    console.log('---Valores---')
-    console.log(`Valor do ingresso: R$ ${price},00`)
-    console.log(`Valor total: R$ ${price * client.ticket},00`)
 
-  } else if (client.timeGame.toUpperCase() === 'FN') {
-    let price
+    if (client.typeGame === 'NC') {
+      console.log(`Valor do ingresso: R$ ${price},00\nValor total: R$ ${price * client.ticket},00`)
+
+    } else if (client.typeGame === 'IT') {
+      console.log(`Valor do ingresso: U$ ${price},00\nValor total: U$ ${price * client.ticket * dolar},00`)
+    } 
+
+  } else if (client.timeGame === 'FN') {
     switch (client.category) {
       case 4:
         price = 330
@@ -183,102 +182,45 @@ const gameNC = (client) => {
         break
     }
     
-    console.log('Etapa do jogo:  Finais')
-    console.log(`Categoria:  ${client.category}`)
-    console.log(`Quantidade de Ingressos:  ${client.ticket} ingressos`)
-    console.log('---Valores---')
-    console.log(`Valor do ingresso: R$ ${price},00`)
-    console.log(`Valor total: R$ ${price * client.ticket},00`)
+    if (client.typeGame === 'NC') {
+      console.log(`Valor do ingresso: R$ ${price},00\nValor total: R$ ${price * client.ticket},00`)
+
+    } else if (client.typeGame === 'IT') {
+      console.log(`Valor do ingresso: U$ ${price},00\nValor total: U$ ${price * client.ticket * dolar},00`)
+    }
   }
 }
 
-const gameIT = (client) => {
-  const dolar = 4.10
-  if (client.timeGame.toUpperCase() === 'SF') {
-    let price
-    switch (client.category) {
-      case 4:
-        price = 220
-        break
-      case 3:
-        price = 550
-        break
-      case 2:
-        price = 880
-        break
-      case 1:
-        price = 1320
-        break
-    }
-    
-    console.log('Etapa do jogo:  Semifinais')
-    console.log(`Categoria:  ${client.category}`)
-    console.log(`Quantidade de Ingressos:  ${client.ticket} ingressos`)
-    console.log('---Valores---')
-    console.log(`Valor do ingresso: R$ ${price},00`)
-    console.log(`Valor total: U$ ${price * client.ticket * dolar},00`)
+const game = (client) => {
+  if (client.timeGame === 'SF') {    
+    console.log('Etapa do jogo:  Semifinais')    
 
-  } else if (client.timeGame.toUpperCase() === 'DT') {
-    let price
-    switch (client.category) {
-      case 4:
-        price = 170
-        break
-      case 3:
-        price = 330
-        break
-      case 2:
-        price = 440
-        break
-      case 1:
-        price = 660
-        break
-    }
-    
+  } else if (client.timeGame === 'DT') {
     console.log('Etapa do jogo:  Decisão do 3º lugar')
-    console.log(`Categoria:  ${client.category}`)
-    console.log(`Quantidade de Ingressos:  ${client.ticket} ingressos`)
-    console.log('---Valores---')
-    console.log(`Valor do ingresso: R$ ${price},00`)
-    console.log(`Valor total: U$ ${price * client.ticket * dolar},00`)
 
-  } else if (client.timeGame.toUpperCase() === 'FN') {
-    let price
-    switch (client.category) {
-      case 4:
-        price = 330
-        break
-      case 3:
-        price = 880
-        break
-      case 2:
-        price = 1320
-        break
-      case 1:
-        price = 1980
-        break
-    }
-    
+  } else if (client.timeGame === 'FN') {
     console.log('Etapa do jogo:  Finais')
-    console.log(`Categoria:  ${client.category}`)
-    console.log(`Quantidade de Ingressos:  ${client.ticket} ingressos`)
-    console.log('---Valores---')
-    console.log(`Valor do ingresso: R$ ${price},00`)
-    console.log(`Valor total: U$ ${price * client.ticket * dolar},00`)
   }
+
+  console.log(`Categoria:  ${client.category}`)
+  console.log(`Quantidade:  ${client.ticket} ingressos`)
+  console.log('---Valores---')
+  prices(client)
 }
 
 const region = (client) => {
-  if (client.typeGame.toUpperCase() === 'NC') {
+  if (client.typeGame === 'NC') {
     console.log('---Dados da compra---')
     console.log(`Nome do cliente:  ${client.name}`)
     console.log('Tipo do jogo:  Nacional')
-    gameNC(client)
-  } else if (client.typeGame.toUpperCase() === 'IT') {
+    game(client)
+    
+  } else if (client.typeGame === 'IT') {
     console.log('---Dados da compra---')
     console.log(`Nome do cliente:  ${client.name}`)
     console.log('Tipo do jogo:  Internacional')
-    gameIT(client)
+    game(client)
+
   } else {
     return console.log('Compra não realizada')
   }
