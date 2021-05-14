@@ -88,3 +88,31 @@ const compreYpe = nomeProdutoYpe.map((produto) => {
 })
 
 console.log(compreYpe)
+
+
+
+// DESAFIOS
+
+// 1)
+const pokemons = [
+  { nome: "Bulbasaur", tipo: "grama" },
+  { nome: "Bellsprout", tipo: "grama" },
+  { nome: "Charmander", tipo: "fogo" },
+  { nome: "Vulpix", tipo: "fogo" },
+  { nome: "Squirtle", tipo: "água" },
+  { nome: "Psyduck", tipo: "água" },
+]
+// a.
+const nomesOrdemAlfabetica = pokemons.map((pokemon) => {
+  return pokemon.nome
+})
+
+console.log(nomesOrdemAlfabetica.sort())
+// b.
+const tiposNaoRepetidos = pokemons.map((pokemon) => {
+  return pokemon.tipo
+}).filter((tipo, index, array) => {
+  return array.indexOf(tipo) === index
+})
+
+console.log(tiposNaoRepetidos)
