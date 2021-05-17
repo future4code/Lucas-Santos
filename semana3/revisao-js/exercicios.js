@@ -7,17 +7,23 @@ function inverteArray(array) {
 //Exercício 2
 
 function retornaNumerosParesElevadosADois(array) {
-  const newArray = array.map((number) => {
+  const newArray = array.filter((number) => {
+    return number % 2 === 0
+  }).map((number) => {
     return number ** 2
   })
 
-  return console.log(newArray)
+  return newArray
 }
 
 //Exercício 3
 
 function retornaNumerosPares(array) {
-  // implemente sua lógica aqui
+  const newArray = array.filter((number) => {
+    return number % 2 === 0
+  })
+
+  return newArray
 }
 
 //Exercício 4
