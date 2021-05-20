@@ -115,6 +115,9 @@ td button {
   height: 100px;
 }
 
+.produto {
+  text-align: center;
+}
 
 #back-button {
   background-color: white;
