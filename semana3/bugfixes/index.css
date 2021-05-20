@@ -115,6 +115,11 @@ td button {
   height: 100px;
 }
 
+.icone {
+  width: 4rem;
+  height: 4rem;
+}
+
 .produto {
   text-align: center;
 }
