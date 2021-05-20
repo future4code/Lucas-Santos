@@ -115,6 +115,13 @@ td button {
   height: 100px;
 }
 
+.search {
+  position: absolute;
+  margin-left: 0.2rem;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
 .icone {
   width: 4rem;
   height: 4rem;
