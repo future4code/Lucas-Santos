@@ -1,0 +1,21 @@
+.slogan {
+  margin-top: 10rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  color: white;
+  background-color: darkgrey;
+}
+
+footer {
+  margin-left: 1rem;
+  margin-top: 10rem;
+  color: darkgray;
+}
+
+footer img {
+  padding-left: 1rem;
+  height: 2rem;
+  width: 2rem;
+}
