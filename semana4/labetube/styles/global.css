@@ -1,0 +1,16 @@
+:root {
+  --text-title: #FFF;
+  --text: #7d7d7d;
+  
+  --background: rgb(33, 33, 33);
+  --main: rgb(24, 24, 24);
+  --background-card: #383838;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text-title);
+}

@@ -1,0 +1,87 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  margin: 1rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: row;
+}
+
+.slogan h1 {
+  margin-left: 0.2rem;
+  font-size: 1.4rem;
+}
+
+.slogan span {
+  font-size: 0.6rem;
+  font-weight: 100;
+  margin-left: 0.3rem;
+  opacity: 0.5;
+}
+
+.logo img {
+  width: 10%;
+  height: 10%;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.field-search input {
+  height: 30px;
+  width: 400px;
+  background-color: var(--main);
+  border: solid 0.1rem var(--background-card);
+}
+
+.button-search {
+  height: 30px;
+  width: 50px;
+}
+
+.button-search img {
+  width: 100%;
+  height: 100%;
+}
+
+.microfone {
+  width: 3%;
+  height: 3%;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.settings img {
+  margin-right: 2.5rem;
+  width: 5%;
+  height: 5%;
+}
+
+.settings .img-user {
+  border-radius: 50%;
+}
