@@ -14,3 +14,19 @@
   background-color: var(--background);
   color: var(--text-title);
 }
+
+footer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+}
