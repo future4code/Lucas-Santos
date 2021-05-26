@@ -1,0 +1,122 @@
+.cabecalho {
+  position: fixed;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  margin: 1rem;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 3.5rem;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.slogan h1 {
+  margin-left: 0.2rem;
+  font-size: 1rem;
+}
+
+.slogan span {
+  font-size: 0.5rem;
+  font-weight: 100;
+  margin-left: 0.3rem;
+  opacity: 0.5;
+}
+
+.logo img {
+  width: 7%;
+  height: 7%;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.field-search input {
+  height: 25px;
+  width: 600px;
+  background-color: var(--main);
+  border: solid 0.1rem var(--background-card);
+}
+
+.field-search input::placeholder {
+  padding-left: 0.3rem;
+  font-weight: bolder;
+}
+
+.button-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-card);
+  padding: 0.1rem;
+  height: 25px;
+  width: 60px;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.button-search img {
+  background-color: var(--background-card);
+  width: 50%;
+  height: 50%;
+}
+
+.microfone {
+  width: 2.5%;
+  height: 2.5%;
+  cursor: pointer;
+  margin-left: 0.6rem;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.settings img {
+  margin-right: 2.5rem;
+  width: 4%;
+  height: 4%;
+  cursor: pointer;
+}
+
+.settings .img-user {
+  border-radius: 50%;
+  width: 7.5%;
+  height: 7.5%;
+}
+
+@media (max-width: 500px) {
+
+  .slogan h1 {
+    font-size: 5rem;
+  }
+}
