@@ -1,0 +1,29 @@
+.Main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 15px;
+  padding: 1.5rem;
+  background-color: var(--main);
+  height: 100vh;
+}
+
+.Main div {
+  display: grid;
+  grid-template-rows: 250px 25px 25px;
+  align-items: center;
+}
+
+.Main video {
+  height: 100%;
+  width: 100%;
+}
+
+.Main h3 {
+  font-weight: 500;
+}
+
+.Main p {
+  color: var(--text);
+}
