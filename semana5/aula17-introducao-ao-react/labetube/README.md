@@ -8,22 +8,6 @@
 
 <h1 align="center">Labetube</h1>
 
-<p align="center">
-  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/lucasgomesoficial/labetube?color=56BEB8">
-
-  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/lucasgomesoficial/labetube?color=56BEB8">
-
-  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/lucasgomesoficial/labetube?color=56BEB8">
-
-  <img alt="Licença" src="https://img.shields.io/github/license/lucasgomesoficial/labetube?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/lucasgomesoficial/labetube?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/lucasgomesoficial/labetube?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/lucasgomesoficial/labetube?color=56BEB8" /> -->
-</p>
-
 <!-- Status -->
 
 <!-- <h4 align="center"> 
