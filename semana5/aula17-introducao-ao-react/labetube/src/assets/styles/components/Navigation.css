@@ -1,0 +1,26 @@
+.Navigation div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.Navigation div img {
+  width: 9%;
+  margin-left: 1rem;
+}
+
+.Navigation div h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.inicio {
+  background-color: var(--background-card);
+}
+
+.inicio h2{
+  background-color: var(--background-card);
+}
