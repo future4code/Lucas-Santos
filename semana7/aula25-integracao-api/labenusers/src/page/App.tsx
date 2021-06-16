@@ -14,8 +14,6 @@ import {
 class App extends React.Component {
   state = {
     users: [],
-    inputName: '',
-    inputEmail: '',
     page: 'createUsers'
   }
 
@@ -31,30 +29,6 @@ class App extends React.Component {
     })
   }
 
-  createUser = () => {
-    api.post('/', {
-      name: this.state.inputName,
-      email: this.state.inputEmail
-    }).then(() => {
-      alert('Usuário Cadastrado! :)')
-      this.setState({
-        inputName: '',
-        inputEmail: ''
-      })
-      this.showUsersList()
-    }).catch(() => {
-      alert('Erro no cadastro! :(')
-    })
-  }
-
-  onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ inputName: e.target.value })
-  }
-  
-  onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ inputEmail: e.target.value })
-  }
-
   changePage = () => {
     if (this.state.page === 'createUsers') {
       this.setState({ page: 'userList' })
@@ -66,18 +40,8 @@ class App extends React.Component {
   render() {
     const renderPage = () => {
       if (this.state.page === 'createUsers') {
-        return (
-          <>
-            <CreateUsers
-              inputName={this.state.inputName}
-              inputEmail={this.state.inputEmail}
-              onChangeName={this.onChangeName}
-              onChangeEmail={this.onChangeEmail}
-              createUser={this.createUser}
-              changePage={this.changePage}
-            />
-          </>
-        )
+        return <CreateUsers changePage={this.changePage}/>
+        
       } else if (this.state.page === 'userList') {
         return (
           <ContainerUserList>
