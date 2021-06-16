@@ -6,13 +6,19 @@ type CreateUsersProps = {
   inputEmail: string,
   onChangeName: React.ChangeEventHandler<HTMLInputElement>,
   onChangeEmail: React.ChangeEventHandler<HTMLInputElement>,
-  createUser: React.MouseEventHandler<HTMLButtonElement>
+  createUser: React.MouseEventHandler<HTMLButtonElement>,
+  changePage: Function
 }
 
 class CreateUsers extends React.Component<CreateUsersProps> {
   render() {
     return (
       <Container>
+        <button
+          onClick={() => this.props.changePage()}
+        >
+          Listar Usuários
+        </button>
         <Main>
           <h1>Cadastrar Usuário</h1>
           <div>
@@ -36,7 +42,7 @@ class CreateUsers extends React.Component<CreateUsersProps> {
             Salvar Usuário
           </button>
         </Main>
-        <button>Lista de Usuários</button>
+        
       </Container>
     );
   }

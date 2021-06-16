@@ -1,75 +1,46 @@
 import React from "react";
 import api from '../../services/api'
-import styled from 'styled-components'
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 20vw;
-  margin-top: 1%;
-
-  span {
-    font-weight: 500;
-  }
-
-  button {
-    border: none;
-    height: 20px;
-    cursor: pointer;
-    
-    img {
-      border-radius: 10%;
-      height: 100%;
-    }
-  }
-`
+import { Container, Button } from './styled'
 
 type UserListProps = {
   name: string,
   email: string,
-  id: string
+  id: string,
+  showList: Function
 }
 
 class UsersList extends React.Component<UserListProps> {
   state = {
-    deleteID: ''
+    deleteID: this.props.id
   }
 
   captureID = () => {
     this.setState({ deleteID: this.props.id})
     this.deleteUser()
-    console.log('capture', this.props.id)
   }
 
   componentDidUpdate = () => {
-  }
-
-  componentDidMount = () => {    
-    console.log('mount:', this.state.deleteID)
+    this.props.showList()
   }
 
   deleteUser = () => {
-    console.log('state ID', this.state.deleteID)
-    api.delete(`${this.state.deleteID}`).then(() => {
+    const id = `/${this.state.deleteID}`
+    api.delete(id).then(() => {
       alert(`Usuário deletado`)
-      console.log('dentro do delete', `${this.state.deleteID}`)
     }).catch((err) => {
       alert(err)
-      console.log('deu erro')
     })
   }  
 
   render() {
-    console.log('render:', this.state.deleteID)
     return (
       <Container>
         <p><span>Nome:</span> {this.props.name}</p>
-        <button
+        <Button
           onClick={this.captureID}
         >
           <img src="https://i.imgur.com/TUt7tzu.png" alt="lixeira" />
-        </button>
+        </Button>
       </Container>
     );
   }
