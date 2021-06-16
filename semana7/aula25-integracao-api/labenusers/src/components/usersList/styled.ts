@@ -13,16 +13,17 @@ const Container = styled.div`
   }
 `
 
-const Button = styled.button`
-  border: none;
-  height: 20px;
-  cursor: pointer;
-  background-color: white;
-  
-  img {
-    border-radius: 10%;
-    height: 100%;
-  }
+const Users = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 
-export { Container, Button }
+const Button = styled.button`
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: white;
+`
+
+export { Container, Users, Button }
