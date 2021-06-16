@@ -10,23 +10,10 @@ type UserListProps = {
 }
 
 class UsersList extends React.Component<UserListProps> {
-  state = {
-    deleteID: this.props.id
-  }
-
-  captureID = () => {
-    this.setState({ deleteID: this.props.id})
-    this.deleteUser()
-  }
-
-  componentDidUpdate = () => {
-    this.props.showList()
-  }
-
-  deleteUser = () => {
-    const id = `/${this.state.deleteID}`
+  deleteUser = (id: string) => {
     api.delete(id).then(() => {
-      alert(`Usuário deletado`)
+      alert(`${this.props.name} deletado`)
+      this.props.showList()
     }).catch((err) => {
       alert(err)
     })
@@ -37,7 +24,7 @@ class UsersList extends React.Component<UserListProps> {
       <Container>
         <p><span>Nome:</span> {this.props.name}</p>
         <Button
-          onClick={this.captureID}
+          onClick={() => this.deleteUser(this.props.id)}
         >
           <img src="https://i.imgur.com/TUt7tzu.png" alt="lixeira" />
         </Button>
