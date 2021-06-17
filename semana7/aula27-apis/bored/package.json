@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.10"
+    "@types/styled-components": "^5.1.10",
+    "surge": "^0.23.0"
   }
 }
