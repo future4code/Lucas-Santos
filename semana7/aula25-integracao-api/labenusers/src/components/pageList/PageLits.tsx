@@ -57,6 +57,7 @@ class App extends React.Component<PageListProps> {
           <>
             <Button
               onClick={() => this.props.changePage()}
+              title='Ir para cadastro de Usuários'
             >
               Criar Usuários
             </Button>

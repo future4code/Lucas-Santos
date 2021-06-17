@@ -21,6 +21,7 @@ class UserPerfil extends React.Component<UserPerfilProps> {
           <h1>Usuário</h1>
           <Button
             onClick={() => this.props.changeRender()}
+            title='Voltar a lista de Usuários'
           >Voltar</Button>
         </Header>
         <User>

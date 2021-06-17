@@ -32,6 +32,7 @@ class CreateUsers extends React.Component<CreateUsersProps> {
       <Container>
         <button
           onClick={() => this.props.changePage()}
+          title='Ir para a listagem de Usuários'
         >
           Listar Usuários
         </button>
@@ -54,6 +55,7 @@ class CreateUsers extends React.Component<CreateUsersProps> {
           <button
             type='button'
             onClick={this.createUser}
+            title='Salvar o cadastro do Usuário'
           >
             Salvar Usuário
           </button>
