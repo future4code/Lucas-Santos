@@ -8,7 +8,7 @@ import {
 
 class App extends React.Component {
   state = {
-    page: 'userList'
+    page: 'createUsers'
   }
 
   changePage = () => {
