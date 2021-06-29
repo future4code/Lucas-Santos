@@ -37,7 +37,6 @@ export const PokemonsList = (props: PokemonProps) => {
     }
   }
 
-  console.log(pokemon.sprites)
   return (
     <div className='cardPokemon'>
       {pokemon.sprites && (
