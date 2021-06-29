@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 
-import './styles.css'
+import './styles.scss'
 
 type PokemonProps = {
   pokemonName: string
@@ -41,11 +41,15 @@ export const PokemonsList = (props: PokemonProps) => {
   return (
     <div className='cardPokemon'>
       {pokemon.sprites && (
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <img className='imagePoke' src={pokemon.sprites.front_default} alt={pokemon.name} />
       )}
-      <p>{pokemon.name}</p>
-      <p>{pokemon.weight} Kg</p>
-      {pokemon.types && <p>{pokemon.types[0].type.name}</p>}
+      <div className='pokemon'>
+        <p><span>Nome:</span> {pokemon.name}</p>
+        <hr />
+        <p><span>Peso: </span>{pokemon.weight} Kg</p>
+        <hr />
+        {pokemon.types && <p><span>Tipo:</span> {pokemon.types[0].type.name}</p>}
+      </div>
     </div>
   );
 }
