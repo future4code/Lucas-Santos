@@ -25,17 +25,17 @@ export const PokemonsList = (props: PokemonProps) => {
   const [pokemon, setPokemon] = useState({} as PokeType)
 
   useEffect(() => {
+    const showPokemon = async () => {
+      try {
+        const res = await api.get(`${props.pokemonName}`)
+        setPokemon(res.data)
+      } catch (err) {
+        alert(err)
+      }
+    }
+
     showPokemon()
   }, [props.pokemonName])
-
-  const showPokemon = async () => {
-    try {
-      const res = await api.get(`${props.pokemonName}`)
-      setPokemon(res.data)
-    } catch (err) {
-      alert(err)
-    }
-  }
 
   return (
     <div className='cardPokemon'>

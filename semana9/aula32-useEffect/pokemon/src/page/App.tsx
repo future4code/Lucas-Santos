@@ -13,17 +13,17 @@ export const App = () => {
   const [pokemonName, setPokemonName] = useState('')
   
   useEffect(() => {
+    const handlePokemonsName = async () => {
+      try {
+        const res = await api.get('?limit=151')
+        setPokemons(res.data.results)
+      } catch (err) {
+        alert(err)
+      }
+    }
+
     handlePokemonsName()
   }, [pokemonName])
-
-  const handlePokemonsName = async () => {
-    try {
-      const res = await api.get('?limit=151')
-      setPokemons(res.data.results)
-    } catch (err) {
-      alert(err)
-    }
-  }
 
   const newPokemons = pokemons.map((pokemon) => {
     return pokemon.name
@@ -36,10 +36,10 @@ export const App = () => {
         <p>Selecione o Pokémon</p>
         <select onChange={(e) => setPokemonName(e.target.value)}>
           <option value={''}>Selecione</option>
-          {newPokemons.map((pokemon) => {
+          {newPokemons.map((name) => {
             return (
-              <option key={pokemon} value={pokemon}>
-                {pokemon}
+              <option key={name} value={name}>
+                {name}
               </option>
             );
           })}
