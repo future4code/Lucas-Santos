@@ -1,0 +1,36 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 40px;
+
+    hr {
+      height: 0.3rem;
+      border: none;
+      background: rgba(17, 120, 242, 0.8);
+      width: 50%;
+    }
+
+    h3 {
+      font-weight: 100;
+    }
+
+    p {
+      color: var(--grey-color);
+    }
+  }
+
+  .image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

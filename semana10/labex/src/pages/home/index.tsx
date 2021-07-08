@@ -1,13 +1,75 @@
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { Header } from '../../components/header';
+
+import './styles.scss'
 
 export const Home = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
-    <div>
-      <h1>Labex</h1>
-      <button onClick={() => history.push('/trips')}>Ver Viagens</button>
-      <button onClick={() => history.push('/login')}>Área de Admin</button>
-    </div>
+    <>
+      <Header/>
+      <div className='containerHome'>
+        <div className='banner'>
+          <h2>Referências em Turísmo Espaciais</h2>
+          <div>
+            <h3>SUA MELHOR ESCOLHA EM CONFORTO E</h3>
+            <h3>SEGURANÇA EM VIAGENS ESPACIAIS</h3>
+          </div>
+        </div>
+        <div className='main-home'>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+          <div title='Mercúrio'>
+            <div>
+              <span>Mercúrio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
