@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import { ButtonPrimary, ButtonSuccess } from '../../components/button';
 import { Header } from '../../components/header';
 
 export const Login = () => {
@@ -7,11 +8,16 @@ export const Login = () => {
   return (
     <div>
       <Header/>
-      <br /><br />
-      <h1>Login</h1>
-      <input type="text" placeholder='E-mail' />
-      <input type="text" placeholder='Senha' />
-      <button onClick={() => history.replace('/admin')}>Entrar</button>
+      <hr />
+      <div className='header'>
+        <h2>Login</h2>
+        <ButtonPrimary onClick={() => history.push('/')}>Voltar</ButtonPrimary>
+      </div>
+      <div className='teste'>
+        <input type="text" placeholder='E-mail' />
+        <input type="text" placeholder='Senha' />
+        <ButtonSuccess onClick={() => history.replace('/admin')}>Entrar</ButtonSuccess>
+      </div>
     </div>
   )
 }

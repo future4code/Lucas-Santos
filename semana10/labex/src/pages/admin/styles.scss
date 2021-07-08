@@ -1,0 +1,31 @@
+.header {
+  > div {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    width: 50%;
+    border: 1px solid black;
+    
+    a {
+      color: var(--grey-color);
+    }
+
+    span {
+      color: var(--red-color);
+    }
+  }
+}

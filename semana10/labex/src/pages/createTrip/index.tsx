@@ -1,4 +1,5 @@
 // import { useHistory } from 'react-router-dom';
+import { ButtonSuccess } from '../../components/button';
 import { Header } from '../../components/header';
 
 export const CreateTrip = () => {
@@ -15,7 +16,7 @@ export const CreateTrip = () => {
         <input type="text" placeholder='Data' />
         <input type="text" placeholder='Descrição' />
         <input type="text" placeholder='Duração em dias' />
-        <button>Criar</button>
+        <ButtonSuccess>Criar</ButtonSuccess>
       </form>
     </div>
   )
