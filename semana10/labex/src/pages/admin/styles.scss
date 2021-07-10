@@ -16,16 +16,67 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 50px;
+    height: 100px;
     width: 50%;
-    border: 1px solid black;
     
     a {
+      display: flex;
+      align-items: center;
       color: var(--grey-color);
+      gap: 50px;
+      width: 40%;
+      height: 100%;
+
+      img {
+        height: 100%;
+      }
     }
 
-    span {
-      color: var(--red-color);
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .accept {
+        color: var(--white-color);
+        background-color: green;
+        font-size: 1.5rem;
+        border: none;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        border-radius: 10px;
+        opacity: 0.5;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .delete {
+        color: var(--white-color);
+        background-color: var(--red-color);
+        border: none;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        border-radius: 10px;
+        opacity: 0.6;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
+  }
+
+  .linha {
+    height: 0.03rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    width: 50%;
   }
 }

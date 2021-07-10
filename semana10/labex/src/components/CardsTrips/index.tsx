@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRequestGetTrip } from '../../hooks/useResquestData';
 
 import './styles.scss'
@@ -18,7 +19,7 @@ export const CardsTrips = () => {
     <>
       {trips && trips.map(({id, name, description, planet, durationInDays, date}: TripListType) => {
         return (
-          <div key={id} className='card'>
+          <Link to={`/trips/${id}/${name}`} key={id} className='card'>
             <img src={planet} alt={name} />
             <div>
               <p><span>Nome: </span>{name}</p>
@@ -26,7 +27,7 @@ export const CardsTrips = () => {
               <p><span>Duração: </span>{durationInDays}</p>
               <p><span>Data: </span>{date}</p>
             </div>
-          </div>
+          </Link>
         )
       })}
     </>

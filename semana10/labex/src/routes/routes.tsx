@@ -37,12 +37,12 @@ export const Routes = () => {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/trips' exact component={ListTrips} />
-        <Route path='/trips/subscribe' component={SubscribeTrip} />
+        <Route path='/trips/:id/:name' component={SubscribeTrip} />
         <Route path='/about' component={About} />
         <Route path='/login' component={Login} />
         <PrivateRoute path='/admin' exact component={Admin} />
         <PrivateRoute path='/admin/createtrip' component={CreateTrip} />
-        <PrivateRoute path='/admin/:tripdetails' component={TripDetails} />
+        <PrivateRoute path='/admin/:tripdetailsid' component={TripDetails} />
       </Switch>
     </BrowserRouter>
   )

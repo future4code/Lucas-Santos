@@ -1,30 +1,37 @@
 import { useParams } from 'react-router-dom';
+import { useRequestGetTripDetails } from '../../hooks/useResquestData';
 import { Header } from '../../components/header';
+import { MainTripDetails } from '../../components/mainTripDetails';
 
 type ParamsType = {
-  tripdetails: string
+  tripdetailsid: string
 }
 
 export const TripDetails = () => {
-  // const history = useHistory();
-  const params = useParams<ParamsType>();
+  const { tripdetailsid } = useParams<ParamsType>();
+  const [ trips, isLoading, error ]: any[] = useRequestGetTripDetails(tripdetailsid)
 
   return (
     <div>
       <Header />
-      <br /><br />
-      <h1>Viagem ao Centro da Terra ({params.tripdetails})</h1>
-      <p><span>Descrição: </span>Jungle! Welcome to the Jungle Baby!</p>
-      <p><span>Planeta: </span>Terra</p>
-      <p><span>Duração: </span>Bastante</p>
-      <p><span>Data: </span>2021-07-05</p>
-      <br />
-      <br /><br />
-      <h2>Candidatos Pendentes</h2>
-      <p>Não há candidatos pendentes</p>
-      <br /><br />
-      <h2>Candidatos Aprovados</h2>
-      <p>Não há candidatos aprovados</p>
+      <hr />
+      {isLoading && <img src="https://cdn.hotware.com.tw/v_comm/global/images/loading.gif" alt="loading" />}
+      {!isLoading && error && <p>Ocorreu um Erro</p>}
+      {!isLoading && trips && (
+        <MainTripDetails
+          id={trips.id}
+          planet={trips.planet}
+          durationInDays={trips.durationInDays}
+          date={trips.date}
+          name={trips.name}
+          description={trips.description}
+          approved={trips.approved}
+          candidates={trips.candidates}
+        />
+      )}
+      {!isLoading && !trips && (
+        <p>Nenhuma viagem cadastrada</p>
+      )}
     </div>
   )
 }
