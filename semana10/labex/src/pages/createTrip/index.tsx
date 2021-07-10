@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { apiLabex } from '../../services/api';
 import { Header } from '../../components/header';
-import { ButtonSuccess } from '../../components/button';
+import { ButtonPrimary, ButtonSuccess } from '../../components/button';
 
 export const CreateTrip = () => {
   const history = useHistory()
@@ -24,17 +24,18 @@ export const CreateTrip = () => {
       toast.success(`Viagem (${form.name}) cadastrada`);
       history.push('/admin')
     } catch (err) {
-      console.log(err)
       toast.error(`Error ao cadastrar a viagem`);
     }
-    console.log(form)
   }
 
   return (
     <div>
       <Header />
-      <br /><br />
-      <h1>Criar Viagem</h1>
+      <hr />
+      <div className='header'>
+        <h2>Criar Viagem</h2>
+        <ButtonPrimary onClick={() => history.goBack()}>Voltar</ButtonPrimary>
+      </div>
       <form onSubmit={createTrip}>
         <input
           name='name'

@@ -6,19 +6,19 @@ import { ButtonPrimary, ButtonSuccess } from '../../components/button';
 import { Header } from '../../components/header';
 
 export const Login = () => {
+  const history = useHistory();
   const [form, setForm] = useState({
     email: '',
     password: ''
   })
-  const [password, setPassword] = useState('')
-  const history = useHistory();
+
   const token = localStorage.getItem('token')
 
   useEffect(() => {
     if (token !== null) {
       history.replace('/admin')
     }
-  }, [])
+  }, [history, token])
   
   const submitLogin = async (e: FormEvent) => {
     e.preventDefault();

@@ -53,7 +53,6 @@ export const SubscribeTrip = () => {
       toast.success(`${form.name} inscrito na viagem: ${name}.`);
       history.push('/trips')
     } catch (err) {
-      console.log(err)
       toast.error(`Error ao inscrever-se a viagem: ${form.name}`);
     }
   }
@@ -88,7 +87,7 @@ export const SubscribeTrip = () => {
           placeholder='Motivo da viagem'
           required
         />
-        <textarea
+        <input
           name='profession'
           value={form.profession}
           onChange={(e) => setForm({...form, [e.target.name]: e.target.value})}

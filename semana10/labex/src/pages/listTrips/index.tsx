@@ -11,7 +11,7 @@ export const ListTrips = () => {
     <>
       <Header />
       <hr />
-      <div className='header'>
+      <div className='header-list'>
         <h2>Viagens</h2>
         <p>Clique nas viagens para se escrever</p>
       </div>

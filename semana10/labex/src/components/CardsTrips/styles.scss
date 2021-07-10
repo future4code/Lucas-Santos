@@ -1,13 +1,16 @@
 .card {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-template-rows: 100%;
   align-items: center;
+  gap: 5%;
   width: 50%;
   height: 200px;
   color: var(--grey-color);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   img {
+    width: 80%;
     height: 100%;
   }
 
@@ -15,5 +18,15 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .line-card {
+      height: 0.03rem;
+      border: none;
+      background: rgba(0, 0, 0, 0.2);
+    }
   }
 }

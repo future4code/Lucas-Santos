@@ -40,7 +40,6 @@ export const MainTripDetails = (props: TripListDetailsProps) => {
       approve === true ? toast.success(`Candidato ${candidateName} aprovado`) : toast.error(`Candidato ${candidateName} reprovado`);
       window.location.reload()
     } catch (err) {
-      console.log(err)
       toast.error(`Error ao aprovar o ${candidateName}`);
     }
   }

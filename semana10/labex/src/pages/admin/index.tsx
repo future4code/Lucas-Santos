@@ -35,7 +35,6 @@ export const Admin = () => {
       toast.success(`Viagem (${name}) excluída`);
       window.location.reload()
     } catch (err) {
-      console.log(err)
       toast.error(`Error ao excluír a viagem`);
     }
   }
@@ -44,39 +43,37 @@ export const Admin = () => {
     <>
       <Header />
       <hr />
-      <div className='header'>
-        <h2>Painel Administrativo</h2>
+      <div className='header-admin'>
+        <h2>Administrativo<span>{trips.length} Viagens cadastrada</span></h2>
         <div>
           <ButtonPrimary onClick={() => history.push('/admin/createtrip')}>Criar Viagem</ButtonPrimary>
           <ButtonDenied title='Deslogar' onClick={logout}>Sair</ButtonDenied>
         </div>
       </div>
-      <div className='cards-container'>
-        {isLoading && <img src="https://cdn.hotware.com.tw/v_comm/global/images/loading.gif" alt="loading" /> }
-        {!isLoading && error && <p>Ocorreu um Erro</p>}
-        {!isLoading && trips && trips.length > 0 && (
-          trips.map(({id, name, planet}: TripListType) => {
-            return (
-              <>
-                <div className='cards' key={id}>
-                  <Link to={`/admin/${id}`} title={`Detalhes de ${name}`}>
-                    <img src={planet} alt="planet" />
-                    {name}
-                  </Link>
-                  <div>
-                    <button onClick={() => history.push(`/admin/${id}`)} className='accept' title={`Detalhes de ${name}`}><IoRocket/></button>
-                    <button onClick={() => deleteTrip(id, name)} title='Excluir' className='delete'><FaTrash/></button>
-                  </div>
+      {isLoading && <img src="https://cdn.hotware.com.tw/v_comm/global/images/loading.gif" alt="loading" /> }
+      {!isLoading && error && <p>Ocorreu um Erro</p>}
+      {!isLoading && trips && trips.length > 0 && (
+        trips.map(({id, name, planet}: TripListType) => {
+          return (
+            <div key={id} className='cards-container'>
+              <div className='cards'>
+                <Link to={`/admin/${id}`} title={`Detalhes de ${name}`}>
+                  <img src={planet} alt="planet" />
+                  {name}
+                </Link>
+                <div>
+                  <button onClick={() => history.push(`/admin/${id}`)} className='accept' title={`Detalhes de ${name}`}><IoRocket/></button>
+                  <button onClick={() => deleteTrip(id, name)} title='Excluir viagem' className='delete'><FaTrash/></button>
                 </div>
-                <hr className='linha'/>
-              </>
-            )
-          })
-        )}
-        {!isLoading && trips && trips.length === 0 && (
-          <p>Nenhuma viagem cadastrada</p>
-        )}
-      </div>
+              </div>
+              <hr className='line-admin'/>
+            </div>
+          )
+        })
+      )}
+      {!isLoading && trips && trips.length === 0 && (
+        <p>Nenhuma viagem cadastrada</p>
+      )}
     </>
   )
 }

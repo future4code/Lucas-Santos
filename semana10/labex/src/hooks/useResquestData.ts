@@ -45,7 +45,7 @@ export const useRequestGetTripDetails = (id: string) => {
     }
 
     getTripDetails(id)
-  }, []);
+  }, [id]);
 
   return [ data, isLoading, error ];
 }

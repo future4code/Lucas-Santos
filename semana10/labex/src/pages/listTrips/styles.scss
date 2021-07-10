@@ -4,15 +4,21 @@ hr {
   background: rgba(17, 120, 242, 0.3);
 }
 
-.header {
+.header-list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
   margin-top: 50px;
 
   h2 {
     font-size: 2rem;
     font-weight: 100;
+  }
+
+  p {
+    font-size: 0.8rem;
   }
 }
 
