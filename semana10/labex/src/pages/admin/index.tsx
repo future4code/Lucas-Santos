@@ -3,6 +3,7 @@ import { FaTrash } from 'react-icons/fa';
 import { IoRocket } from 'react-icons/io5';
 import { Link, useHistory } from 'react-router-dom';
 import { ButtonDenied, ButtonPrimary } from '../../components/button';
+import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { useRequestGetTrip } from '../../hooks/useResquestData';
 import { apiLabex } from '../../services/api';
@@ -74,6 +75,7 @@ export const Admin = () => {
       {!isLoading && trips && trips.length === 0 && (
         <p>Nenhuma viagem cadastrada</p>
       )}
+      <Footer />
     </>
   )
 }

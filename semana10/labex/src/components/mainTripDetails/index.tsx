@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
+import { useDateFix } from '../../hoohs/useDateFixed';
 import { apiLabex } from '../../services/api';
 import { ButtonDenied, ButtonPrimary, ButtonSuccess } from '../button';
+import { CardsCandidates } from '../cardsCandidates';
+
+import './styles.scss'
 
 type TripListDetailsProps = {
   id: string,
@@ -30,6 +35,8 @@ type TripListDetailsProps = {
 
 export const MainTripDetails = (props: TripListDetailsProps) => {
   const history = useHistory()
+  const newDate = useDateFix(props.date)
+  const [ renderApproved, setRenderApproved ] = useState(false)
   
   const approveCandidate = async (candidateId: string, candidateName: string, approve: boolean) => {
     const token = localStorage.getItem('token')
@@ -46,61 +53,82 @@ export const MainTripDetails = (props: TripListDetailsProps) => {
 
   return (
     <>
-      <div className='header'>
+      <div className='header-cards-candidates'>
         <h2>{props.name}</h2>
         <div>
           <ButtonPrimary onClick={() => history.push('/admin')}>Voltar</ButtonPrimary>
         </div>
       </div>
-      <div className='cards-container'>
-        <div className='cards'>
-          <p><span>Descrição: </span>{props.description}</p>
-          <p><span>Planeta: </span>{props.planet}</p>
-          <p><span>Duração: </span>{props.durationInDays}</p>
-          <p><span>Data: </span>{props.date}</p>
+      <div className='container-cards-candidates'>
+        <div className='card-planet'>
+          <div className='image'>
+            <img src={props.planet} alt={props.name} />
+          </div>
+          <div className='info-planet'>
+            <p><span>Descrição: </span>{props.description}</p>
+            <p><span>Duração: </span>{props.durationInDays}</p>
+            <p><span>Data: </span>{newDate}</p>
+          </div>
         </div>
-        <hr className='linha'/>
-        <div className='cards'>
-          <h3>Candidatos Pendentes</h3>
-          {props.candidates?.length > 0 ? (
-            props.candidates.map(({age, applicationText, country, id, name, profession}) => {
-              return (
-                <>
-                  <div key={id}>
-                    <p><span>Nome: </span>{name}</p>
-                    <p><span>Idade: </span>{age}</p>
-                    <p><span>Profissão: </span>{profession}</p>
-                    <p><span>País: </span>{country}</p>
-                    <p><span>Descrição: </span>{applicationText}</p>
+        <div className='header-cards-candidates'>
+          <h3>{renderApproved ? 'Candidatos Aprovados' : 'Candidatos Pendentes'}</h3>
+          <div>
+            <button className='render-button' onClick={() => setRenderApproved(!renderApproved)}>{renderApproved ? 'Pendentes' : 'Aprovados'}</button>
+          </div>
+        </div>
+        {!renderApproved ? (
+          <>
+            {props.candidates?.length > 0 ? (
+              props.candidates.map(({age, applicationText, country, id, name, profession}) => {
+                return (
+                  <div className='cards-candidates'>
+                    <div className='center'>
+                      <CardsCandidates
+                        key={id}
+                        name={name}
+                        age={age}
+                        applicationText={applicationText}
+                        profession={profession}
+                        country={country}
+                      />
+                      <div className='buttons-candidates'>
+                        <ButtonSuccess onClick={() => approveCandidate(id, name, true)}>Aprovar</ButtonSuccess>
+                        <ButtonDenied onClick={() => approveCandidate(id, name, false)}>Desaprovar</ButtonDenied>
+                      </div>
+                    </div>
                   </div>
-                  <ButtonSuccess onClick={() => approveCandidate(id, name, true)}>Aprovar</ButtonSuccess>
-                  <ButtonDenied onClick={() => approveCandidate(id, name, false)}>Desaprovar</ButtonDenied>
-                </>
-              )
-            })
-          ) : (
-            <p>Não há candidatos pendentes</p>
-          )}
-        </div>
-        <hr className='linha'/>
-        <div className='cards'>
-          <h3>Candidatos Aprovados</h3>
-          {props.approved?.length > 0 ? (
-            props.approved.map(({age, applicationText, country, id, name, profession}) => {
-              return (
-                <div key={id}>
-                  <p><span>Nome: </span>{name}</p>
-                  <p><span>Idade: </span>{age}</p>
-                  <p><span>Profissão: </span>{profession}</p>
-                  <p><span>País: </span>{country}</p>
-                  <p><span>Descrição: </span>{applicationText}</p>
-                </div>
-              )
-            })
-          ) : (
-            <p>Não há candidatos aprovados</p>
-          )}
-        </div>
+                )
+              })
+            ) : (
+              <div className='cards-candidates'>
+                <p>Não há candidatos pendentes</p>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            {props.approved?.length > 0 ? (
+              props.approved.map(({age, applicationText, country, id, name, profession}) => {
+                return (
+                  <div className='cards-candidates'>
+                    <CardsCandidates
+                      key={id}
+                      name={name}
+                      age={age}
+                      applicationText={applicationText}
+                      profession={profession}
+                      country={country}
+                    />
+                  </div>
+                )
+              })
+            ) : (
+              <div className='cards-candidates'>
+                <p>Não há candidatos aprovados</p>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </>
   )

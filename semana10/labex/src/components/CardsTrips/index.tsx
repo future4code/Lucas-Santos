@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useRequestGetTrip } from '../../hooks/useResquestData';
+import { useDateFix } from '../../hoohs/useDateFixed';
 
 import './styles.scss'
 
-type TripListType = {
+type TripListProps = {
   id: string,
   name: string,
   description: string,
@@ -12,32 +12,21 @@ type TripListType = {
   date: string
 }
 
-export const CardsTrips = () => {
-  const [trips]: any[] = useRequestGetTrip()
-  const fixDate = (number: any) => { return number <= 9 ? '0' + number : number }
+export const CardsTrips = (props: TripListProps) => {
+  const newDate = useDateFix(props.date)
 
   return (
-    <>
-      {trips && trips.map(({id, name, description, planet, durationInDays, date}: TripListType) => {
-        const newDate = new Date(date)
-        const dateFixed = ((fixDate(newDate.getDate()+1).toString()) + "/" + (fixDate(newDate.getMonth()+1).toString()) + "/" + newDate.getFullYear())
-        return (
-          <>
-            <Link to={`/trips/${id}/${name}`} key={id} className='card'>
-              <img src={planet} alt={name} />
-              <div>
-                <p><span>Nome: </span>{name}</p>
-                <hr className='line-card' />
-                <p><span>Descrição: </span>{description}</p>
-                <hr className='line-card' />
-                <p><span>Duração: </span>{durationInDays} dias</p>
-                <hr className='line-card' />
-                <p><span>Data: </span>{dateFixed}</p>
-              </div>
-            </Link>
-          </>
-        )
-      })}
-    </>
+    <Link to={`/trips/${props.id}/${props.name}`} className='card'>
+      <img src={props.planet} alt={props.name} />
+      <div>
+        <p><span>Nome: </span>{props.name}</p>
+        <hr className='line-card' />
+        <p><span>Descrição: </span>{props.description}</p>
+        <hr className='line-card' />
+        <p><span>Duração: </span>{props.durationInDays} dias</p>
+        <hr className='line-card' />
+        <p><span>Data: </span>{newDate}</p>
+      </div>
+    </Link>
   )
 }

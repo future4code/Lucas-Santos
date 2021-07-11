@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 import { apiLabex } from '../../services/api';
 import { Header } from '../../components/header';
 import { ButtonPrimary, ButtonSuccess } from '../../components/button';
+import { Footer } from '../../components/footer';
 
 export const CreateTrip = () => {
   const history = useHistory()
@@ -77,6 +78,7 @@ export const CreateTrip = () => {
         />
         <ButtonSuccess>Criar</ButtonSuccess>
       </form>
+      <Footer />
     </div>
   )
 }

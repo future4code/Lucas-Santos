@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useRequestGetTripDetails } from '../../hooks/useResquestData';
 import { Header } from '../../components/header';
 import { MainTripDetails } from '../../components/mainTripDetails';
+import { Footer } from '../../components/footer';
 
 type ParamsType = {
   tripdetailsid: string
@@ -32,6 +33,7 @@ export const TripDetails = () => {
       {!isLoading && !trips && (
         <p>Nenhuma viagem cadastrada</p>
       )}
+      <Footer />
     </div>
   )
 }

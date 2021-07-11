@@ -1,0 +1,15 @@
+#cards-candidates {
+  display: flex;
+  grid-gap: 10px;
+  gap: 5px;
+  flex-direction: column;
+
+  p {
+    color: var(--grey-color);
+  }
+
+  > div {
+    display: flex;
+    gap: 10px;
+  }
+}

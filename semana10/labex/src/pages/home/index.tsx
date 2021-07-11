@@ -2,6 +2,7 @@ import { useRequestGetTrip } from '../../hooks/useResquestData';
 import { Header } from '../../components/header';
 
 import './styles.scss'
+import { Footer } from '../../components/footer';
 
 type TripListType = {
   id: string,
@@ -46,6 +47,7 @@ export const Home = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   )
 }

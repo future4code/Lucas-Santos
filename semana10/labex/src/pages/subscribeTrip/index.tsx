@@ -6,6 +6,7 @@ import { Header } from '../../components/header';
 import { ButtonPrimary, ButtonSuccess } from '../../components/button';
 
 import './styles.scss'
+import { Footer } from '../../components/footer';
 
 type ParamsType = {
   id: string,
@@ -111,6 +112,7 @@ export const SubscribeTrip = () => {
         </select>
         <ButtonSuccess>Inscrecer-se</ButtonSuccess>
       </form>
+      <Footer />
     </div>
   )
 }

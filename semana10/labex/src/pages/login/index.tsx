@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { apiLabex } from '../../services/api';
 import { ButtonPrimary, ButtonSuccess } from '../../components/button';
 import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 export const Login = () => {
   const history = useHistory();
@@ -63,6 +64,7 @@ export const Login = () => {
         />
         <ButtonSuccess>Entrar</ButtonSuccess>
       </form>
+      <Footer />
     </div>
   )
 }

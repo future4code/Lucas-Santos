@@ -1,3 +1,4 @@
+import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 
 import './styles.scss'
@@ -38,6 +39,7 @@ export const About = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }
