@@ -27,6 +27,9 @@ Projeto com finalidade de praticar todo o conteúdo do módulo 2
 ## :sparkles: Surge ##
 
 <a href="https://labex-com.surge.sh/" target="_blank">labex.com</a>
+<p>Acesso adm:</p>
+<span>lucasgomes@gmail.com.br</span>
+<span>123456</span>
 
 ## :rocket: Tecnologias ##
 
