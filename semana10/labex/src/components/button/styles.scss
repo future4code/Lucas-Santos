@@ -1,0 +1,47 @@
+.button-primary {
+  background-color: var(--blue-color);
+  font-size: 1rem;
+  padding: 10px 20px;
+  width: 160px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button-primary:hover {
+  opacity: 0.8;
+}
+
+.button-success {
+  background-color: green;
+  font-size: 1rem;
+  padding: 10px 20px;
+  width: 160px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button-success:hover {
+  opacity: 0.8;
+}
+
+.button-denied {
+  background-color: var(--red-color);
+  font-size: 1rem;
+  padding: 10px 20px;
+  width: 160px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button-denied:hover {
+  opacity: 0.8;
+}
