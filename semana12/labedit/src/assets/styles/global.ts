@@ -4,23 +4,10 @@ export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--red-color);
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(238, 89, 91, 0.7);
-    }
   }
 
   body {
-    background-color: var(--white-color);
+    background-color: var(--background-color);
     color: #29292e;
   }
 
@@ -29,14 +16,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --red-color: #ee595b;
-    --grey-color: #737388;
+    --primary-color: #F27649;
+    --neutral-color: #474749;
     --grey-light-color: #a8a8b3;
-    --blue-color: rgb(48, 167, 215);
     --background-color: #f4f5f8;
     --icons-color: #1D407F;
-    --logo-font: 'Edo', sans-serif;
-    --title-font: 700 'Poppins', sans-serif;
   }
 
   li {
@@ -47,3 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 `;
+
+export const primaryBackgroundColor = '#49a1f2'
+export const primaryTextColor = 'white'
+export const textColor = '#474749'
