@@ -1,0 +1,1 @@
+// a) e b) instalado de forma global seria: tsc ./src/exec4.ts
